@@ -14,7 +14,6 @@ from langchain_google_genai import (
 
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from google.colab import userdata
 
 # --------------------------------------------------
 # API Key
@@ -22,6 +21,7 @@ from google.colab import userdata
 
 # Use the already defined GOOGLE_API_KEY variable from previous cells
 # GOOGLEAPI = userdata.get("GOOGLEAPI") # This line caused the error
+GOOGLE_API_KEY=os.getenv("GOOGLE_API_KEY")
 
 if not GOOGLE_API_KEY:
     raise ValueError("GOOGLE_API_KEY environment variable not found or not set correctly.")
